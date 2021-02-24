@@ -3,7 +3,8 @@
 
   var update = function update() {
     var $links = $container.querySelectorAll('[href^="https://assetstore.unity.com/packages/"] > div > div > div > div');
-    $links.forEach(function ($link) {
+    for (var i = 0; i < $links.length; i++) {
+      var $link = $links[i];
       var text = $link.textContent;
       var isCurrency = text[0] === '$' || text[0] === '€';
 
@@ -14,7 +15,7 @@
           $link.setAttribute('style', 'color: red');
         }
       }
-    });
+    }
   };
 
   var updated = false;

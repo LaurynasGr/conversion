@@ -2,7 +2,9 @@
   const $container = document.querySelector('#main-layout-scroller');
   const update = () => {
     const $links = $container.querySelectorAll('[href^="https://assetstore.unity.com/packages/"] > div > div > div > div');
-    $links.forEach($link => {
+
+    for (let i = 0; i < $links.length; i++) {
+      const $link = $links[i];
       const text = $link.textContent;
       const isCurrency = text[0] === '$' || text[0] === '€';
 
@@ -13,7 +15,7 @@
           $link.setAttribute('style', 'color: red')
         }
       }
-    });
+    }
   }
 
   let updated = false;
