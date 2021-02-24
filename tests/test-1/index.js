@@ -1,6 +1,6 @@
 (function() {
   const html = `
-<div id="cv-lightbox">
+<div id="cv-lightbox" style="display: none">
   <div class="lightbox-content">
     <div class="lightbox-countdown">
       <label>This offer expires in</label>
@@ -58,6 +58,7 @@
   setTime();
 
   $('body').append($container);
+  $container.show();
 
   setTimeout(() => $container.addClass('active'), 1000);
   $container.find('.lightbox-close, .lightbox-bg').on('click', close);
